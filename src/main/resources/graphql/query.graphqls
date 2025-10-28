@@ -1,0 +1,5 @@
+type Query {
+#    authentication
+    login(request: Login!): Token!
+    info(request: UserInfo) : [UserDetail]
+}

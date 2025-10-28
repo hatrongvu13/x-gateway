@@ -1,0 +1,34 @@
+server:
+  port: 8080
+
+spring:
+  data:
+    redis:
+      host: redis
+      port: 6379
+      timeout: 2000ms
+  application:
+    version: 0.0.1
+    name: x-gateway
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://auth.example.com
+  grpc:
+    client:
+      product-service:
+        address: static://product-service:9090
+        negotiation-type: plaintext
+      user-service:
+        address: static://user-service:9090
+        negotiation-type: plaintext
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, prometheus
+  prometheus:
+    metrics:
+      export:
+        enabled: true

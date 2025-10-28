@@ -1,0 +1,30 @@
+input Login {
+    username: String!
+    password: String!
+}
+
+input Register {
+    username: String!
+    password: String!
+    email: String!
+    fullName: String
+}
+
+input UserInfo {
+    id: [ID]
+    username: [String!]
+    fullName: [String]
+}
+
+type UserDetail {
+    id: ID
+    username: String
+    fullName: String
+    email: String
+
+}
+
+type Token {
+    token: String!
+    refresh: String
+}

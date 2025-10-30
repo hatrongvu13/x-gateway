@@ -4,7 +4,7 @@ import lombok.experimental.UtilityClass;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 @UtilityClass
-public class SecurityUtil {
+public class SecurityUtils {
     public static String extractToken() {
         var context = SecurityContextHolder.getContext();
         if (context != null && context.getAuthentication() != null) {
